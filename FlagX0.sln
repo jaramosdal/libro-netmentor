@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{67C7D2A7-55BC-4224-BDC3-006F7A335033}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlagX0.Web", "src\FlagX0.Web\FlagX0.Web.csproj", "{B7E7E02D-6FC0-4350-B4F0-904FE0D7AF4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7E7E02D-6FC0-4350-B4F0-904FE0D7AF4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E7E02D-6FC0-4350-B4F0-904FE0D7AF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E7E02D-6FC0-4350-B4F0-904FE0D7AF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E7E02D-6FC0-4350-B4F0-904FE0D7AF4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B7E7E02D-6FC0-4350-B4F0-904FE0D7AF4C} = {67C7D2A7-55BC-4224-BDC3-006F7A335033}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE8D0986-C636-4B68-847A-3DDB29090388}
+	EndGlobalSection
+EndGlobal
