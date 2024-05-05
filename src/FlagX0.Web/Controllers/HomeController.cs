@@ -1,8 +1,8 @@
-using FlagX0.Models;
+using FlagX0.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace FlagX0.Controllers
+namespace FlagX0.Web.Controllers
 {
     public class HomeController : Controller
     {

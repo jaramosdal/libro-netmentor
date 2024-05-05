@@ -1,4 +1,4 @@
-namespace FlagX0.Models
+namespace FlagX0.Web.Models
 {
     public class ErrorViewModel
     {

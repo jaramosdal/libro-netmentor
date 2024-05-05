@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace FlagX0.Data
+namespace FlagX0.Web.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
