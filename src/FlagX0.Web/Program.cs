@@ -14,7 +14,8 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IAddFlagUseCase, AddFlagUseCase>();
+builder.Services.AddScoped<AddFlagUseCase>();
+builder.Services.AddScoped<GetFlagUseCase>();
 
 var app = builder.Build();
 

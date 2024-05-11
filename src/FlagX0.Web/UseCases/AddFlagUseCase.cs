@@ -4,13 +4,7 @@ using System.Security.Claims;
 
 namespace FlagX0.Web.UseCases;
 
-public interface IAddFlagUseCase
-{
-    Task<bool> Execute(string name, bool isEnabled);
-}
-
-
-public class AddFlagUseCase : IAddFlagUseCase
+public class AddFlagUseCase
 {
     private readonly ApplicationDbContext _applicationDbContext;
     private readonly IHttpContextAccessor _httpContextAccessor;

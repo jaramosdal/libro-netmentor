@@ -10,11 +10,13 @@ namespace FlagX0.Web.Controllers;
 [Route("[controller]")]
 public class FlagsController : Controller
 {
-    private readonly IAddFlagUseCase _addFlagUseCase;
+    private readonly AddFlagUseCase _addFlagUseCase;
+    private readonly GetFlagUseCase _getFlagUseCase;
 
-    public FlagsController(IAddFlagUseCase addFlagUseCase)
+    public FlagsController(AddFlagUseCase addFlagUseCase, GetFlagUseCase getFlagUseCase)
     {
         _addFlagUseCase = addFlagUseCase;
+        _getFlagUseCase = getFlagUseCase;
     }
 
     [HttpGet("create")]
@@ -31,8 +33,12 @@ public class FlagsController : Controller
     }
 
     [HttpGet]
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var listFlags = await _getFlagUseCase.Execute();
+        return View(new FlagIndexViewModel()
+        {
+            Flags = listFlags
+        });
     }
 }
