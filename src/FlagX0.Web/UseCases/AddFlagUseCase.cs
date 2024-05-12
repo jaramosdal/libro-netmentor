@@ -1,28 +1,26 @@
 ﻿using FlagX0.Web.Data;
 using FlagX0.Web.Data.Entities;
-using System.Security.Claims;
+using FlagX0.Web.Services;
 
 namespace FlagX0.Web.UseCases;
 
 public class AddFlagUseCase
 {
     private readonly ApplicationDbContext _applicationDbContext;
-    private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IFlagUserDetails _flagUserDetails;
 
-    public AddFlagUseCase(ApplicationDbContext applicationDbContext, IHttpContextAccessor httpContextAccessor)
+    public AddFlagUseCase(ApplicationDbContext applicationDbContext, IFlagUserDetails flagUserDetails)
     {
         _applicationDbContext = applicationDbContext;
-        _httpContextAccessor = httpContextAccessor;
+        _flagUserDetails = flagUserDetails;
     }
 
     public async Task<bool> Execute(string name, bool isEnabled)
     {
-        string userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-
         FlagEntity flagEntity = new FlagEntity 
         { 
             Name = name,
-            UserId = userId, 
+            UserId = _flagUserDetails.UserId, 
             Value = isEnabled
         };
         var response = await _applicationDbContext.Flags.AddAsync(flagEntity);

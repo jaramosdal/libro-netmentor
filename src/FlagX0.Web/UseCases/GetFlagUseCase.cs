@@ -1,28 +1,25 @@
 ﻿using FlagX0.Web.Data;
-using FlagX0.Web.Data.Entities;
 using FlagX0.Web.DTOs;
+using FlagX0.Web.Services;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
 
 namespace FlagX0.Web.UseCases;
 
 public class GetFlagUseCase
 {
     private readonly ApplicationDbContext _applicationDbContext;
-    private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IFlagUserDetails _flagUserDetails;
 
-    public GetFlagUseCase(ApplicationDbContext applicationDbContext, IHttpContextAccessor httpContextAccessor)
+    public GetFlagUseCase(ApplicationDbContext applicationDbContext, IFlagUserDetails flagUserDetails)
     {
         _applicationDbContext = applicationDbContext;
-        _httpContextAccessor = httpContextAccessor;
+        _flagUserDetails = flagUserDetails;
     }
 
     public async Task<List<FlagDto>> Execute()
     {
-        string userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-
         var response = await _applicationDbContext.Flags
-            .Where(a => a.UserId == userId)
+            .Where(a => a.UserId == _flagUserDetails.UserId)
             .AsNoTracking()
             .ToListAsync();
 

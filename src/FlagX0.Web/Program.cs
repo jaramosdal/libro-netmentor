@@ -1,4 +1,5 @@
 using FlagX0.Web.Data;
+using FlagX0.Web.Services;
 using FlagX0.Web.UseCases;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<AddFlagUseCase>();
 builder.Services.AddScoped<GetFlagUseCase>();
+builder.Services.AddScoped<IFlagUserDetails, FlagUserDetails>();
 
 var app = builder.Build();
 
