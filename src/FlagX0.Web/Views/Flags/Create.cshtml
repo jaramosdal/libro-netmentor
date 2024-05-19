@@ -1,5 +1,13 @@
 ﻿@model FlagViewModel
 
+@if (!string.IsNullOrWhiteSpace(Model.Error))
+{
+    <div class="alert alert-danger" role="alert">
+        @Model.Error
+    </div>
+}
+
+
 <form asp-action="create" asp-controller="flags" method="post" class="row row-cols-lg-auto g-3 align-items-center">
     <div class="col-12">
         <label class="visible-hidden" for="flagName">
