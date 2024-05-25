@@ -1,8 +1,12 @@
-﻿namespace FlagX0.Web.Models;
+﻿using System.Security.Policy;
 
-public class FlagViewModel
+namespace FlagX0.Web.Models
 {
-    public string Name { get; set; }
-    public bool IsEnabled { get; set; }
-    public string Error { get; set; }
+    public class FlagViewModel
+    {
+        public string Name { get; set; }
+        public bool IsEnabled { get; set; }
+        public int? Id { get; set; }
+        public string? Error { get; set; }
+    }
 }

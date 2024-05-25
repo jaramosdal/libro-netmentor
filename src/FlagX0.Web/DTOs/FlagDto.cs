@@ -1,7 +1,10 @@
-﻿namespace FlagX0.Web.DTOs;
-
-public class FlagDto
+﻿namespace FlagX0.Web.DTOs
 {
-    public string Name { get; set; }
-    public bool IsEnabled { get; set; }
+    public class FlagDto
+    {
+        public string Name { get; set; }
+        public bool IsEnabled { get; set; }
+        public int Id { get; set; }
+    }
+
 }

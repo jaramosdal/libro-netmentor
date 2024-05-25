@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FlagX0.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240428193530_InitialMigration")]
+    [Migration("20240307232430_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -19,7 +19,7 @@ namespace FlagX0.Web.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("FlagX0.Web.Data.Entities.FlagEntity", b =>

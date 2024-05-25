@@ -4,23 +4,21 @@ using System.Diagnostics;
 
 namespace FlagX0.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController(ILogger<HomeController> logger) : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+		public IActionResult Index()
         {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
+            return View(new IndexViewModel());
         }
 
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Example(string text)
+        {
+            return View("index", new IndexViewModel()) ;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
